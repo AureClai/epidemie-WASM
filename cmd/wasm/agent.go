@@ -174,10 +174,10 @@ func (agent *Agent) updatePos(simu_time float64, settings *SimulationSettings) b
 			if agent.WillDie {
 				agent.State = Dead
 				is_dead = true
-				fmt.Printf("%v has died.\n", agent.ID)
+				//fmt.Printf("%v has died.\n", agent.ID)
 			} else {
 				agent.State = Recovered
-				fmt.Printf("%v has recovered.\n", agent.ID)
+				//fmt.Printf("%v has recovered.\n", agent.ID)
 			}
 		}
 	}
@@ -239,12 +239,12 @@ func (agent *Agent) bounce(other *Agent, simu_time float64) {
 		if agent.State == Healthy && other.State == Sick {
 			// The agent is contamined by the other
 			agent.GetSick(simu_time)
-			fmt.Printf("%v has contamined %v\n", other.ID, agent.ID)
+			//fmt.Printf("%v has contamined %v\n", other.ID, agent.ID)
 		}
 		if agent.State == Sick && other.State == Healthy {
 			// The other is contamined by the agent
 			other.GetSick(simu_time)
-			fmt.Printf("%v has contamined %v\n", agent.ID, other.ID)
+			//fmt.Printf("%v has contamined %v\n", agent.ID, other.ID)
 		}
 	}
 }
@@ -321,7 +321,7 @@ func place_agent_not_another(agents AgentList, walls WallList, settings *Simulat
 		for _, agent2 := range agents {
 			if agent.testContact(agent2) {
 				correctly_placed = false
-				fmt.Println("Not well placed : AGENT")
+				//fmt.Println("Not well placed : AGENT")
 				break
 			}
 		}
@@ -330,7 +330,7 @@ func place_agent_not_another(agents AgentList, walls WallList, settings *Simulat
 		for _, wall := range walls {
 			if cond, _ := agent.testContactWithWall(wall); cond {
 				correctly_placed = false
-				fmt.Println("Not well placed : WALL")
+				//fmt.Println("Not well placed : WALL")
 				break
 			}
 		}

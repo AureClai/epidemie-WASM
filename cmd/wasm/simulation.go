@@ -91,7 +91,7 @@ func DefaultSettings() *SimulationSettings {
 		"window_size_x": 30,
 		"window_size_y": 30,
 		"duration": 30,
-		"dt": 0,
+		"dt": 0.015,
 		"time_to_recover": 5,
 		"frac_unmovable": 0.25,
 		"nb_random_agents": 200,
@@ -157,7 +157,7 @@ func (sim *Simulation) NextStep() {
 	// Update dead agent
 	for _, deadAgent := range hasDied {
 		sim.AliveAgents.RemoveAgent(deadAgent)
-		fmt.Printf("%v has been removed from alives \n", deadAgent.ID)
+		//fmt.Printf("%v has been removed from alives \n", deadAgent.ID)
 	}
 
 	//Get  Info
