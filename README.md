@@ -1,3 +1,3 @@
 # Epidemy Modelisation with Go and Webassembly
 
-TODO
+DEMO : [https://aureclai.github.io/pages/wasm-epidemy/index.html](https://aureclai.github.io/pages/wasm-epidemy/index.html)
